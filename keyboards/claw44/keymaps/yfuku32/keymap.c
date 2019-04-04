@@ -90,13 +90,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT_kc( \
   //,----+----+----+----+----+----.     ,----+----+----+----+----+----.
-     ESC , Q  , W  , E  , R  , T  ,       Y  , U  , I  , O  , P  ,MINS,
+     XXXX, Q  , W  , E  , R  , T  ,       Y  , U  , I  , O  , P  ,XXXX,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
-    S_TAB, A  ,C_S , D  ,M_F , G  ,       H  ,M_J , K  ,C_L ,SCLN,S_ESC,
+     XXXX, A  ,C_S , D  ,M_F , G  ,       H  ,M_J , K  ,C_L ,SCLN,XXXX,
   //|----+----+----+----+----+----+     |----+----+----+----+----+----|
-         , Z  , X  , C  , V  , B  ,       N  , M  ,COMM,DOT ,SLSH,    ,
+     XXXX, Z  , X  , C  , V  , B  ,       N  , M  ,COMM,DOT ,SLSH,XXXX,
   //`----+----+----+----+----+----/     \----+----+----+----+----+----'
-             A_DEL,S_EN,L_SPC,C_BS,      C_BS,R_ENT,S_JA,A_DEL
+              XXXX,S_EN,L_SPC,XXXX,      XXXX,R_ENT,S_JA,XXXX
   //          `----+----+----+----'     `----+----+----+----'
   ),
 
@@ -106,25 +106,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT_kc( \
   //,----+----+----+----+----+----.     ,----+----+----+----+----+----.
-         ,BSLS,CIRC,EXLM,AMPR,PIPE,      AT  ,EQL ,PLUS,ASTR,PERC,MINS,
+     XXXX,BSLS,CIRC,EXLM,AMPR,PIPE,      AT  ,MINS,TAB ,    ,    ,XXXX,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
-     LPRN,HASH,DLR ,DQT ,QUOT,TILD,      LEFT,DOWN, UP ,RGHT,GRV ,RPRN,
+     XXXX,HASH,DLR ,DQT ,QUOT,TILD,      LEFT,DOWN, UP ,RGHT,GRV ,XXXX,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
-        ,     ,    ,    ,LCBR,LBRC,      RBRC,RCBR,    ,    ,    ,    ,
+     XXXX     ,    ,LCBR,LBRC,LPRN,      RPRN,RBRC,RCBR,    ,    ,XXXX,
   //`----+----+----+----+----+----/     \----+----+----+----+----+----'
-                   ,    ,BSPC,    ,          ,    ,    ,RST
+               XXXX,    ,BSPC,XXXX,      XXXX,    ,    ,XXXX
   //          `----+----+----+----'     `----+----+----+----'
   ),
 
   [_LOWER] = LAYOUT_kc( \
   //,----+----+----+----+----+----.     ,----+----+----+----+----+----.
-         ,    ,    ,MSF ,MSR ,MST ,          ,EQL ,PLUS,ASTR,PERC,MINS,
+     XXXX,    ,    ,MSF ,MSR ,MST ,      PERC,EQL ,MINS,PLUS,ASTR,XXXX,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
-         , 1  , 2  , 3  , 4  , 5  ,       6  , 7  , 8  , 9  , 0  ,    ,
+     XXXX, 1  , 2  , 3  , 4  , 5  ,       6  , 7  , 8  , 9  , 0  ,XXXX,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
-         ,    ,    ,    ,    ,    ,          ,    ,COMM,DOT ,SLSH,    ,
+     XXXX,    ,    ,    ,    ,    ,          ,    ,COMM,DOT ,SLSH,XXXX,
   //`----+----+----+--+-+----+----/     \----+----+----+----+----+----'
-               RST ,    ,    ,    ,          ,DEL ,    ,
+               XXXX,    ,    ,XXXX,      XXXX,DEL ,    ,XXXX
   //          `----+----+----+----'     `----+----+----+----'
   ),
 };
