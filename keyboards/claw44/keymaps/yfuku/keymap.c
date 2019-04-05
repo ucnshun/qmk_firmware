@@ -49,8 +49,10 @@ enum macro_keycodes {
 #define KC_M_K LCMD_T(KC_K)
 
 // ctl_t
+#define KC_C_G LCTL_T(KC_G)
 #define KC_C_S LCTL_T(KC_S)
 #define KC_C_L LCTL_T(KC_L)
+#define KC_C_6 LCTL_T(KC_H)
 #define KC_C_BS LCTL_T(KC_BSPC)
 
 // alt_t
@@ -90,9 +92,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT_kc( \
   //,----+----+----+----+----+----.     ,----+----+----+----+----+----.
-     ESC , Q  , W  , E  , R  , T  ,       Y  , U  , I  , O  , P  ,MINS,
+         , Q  , W  , E  , R  , T  ,       Y  , U  , I  , O  , P  ,MINS,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
-    S_TAB, A  ,C_S , D  ,M_F , G  ,       H  ,M_J , K  ,C_L ,SCLN,S_ESC,
+      TAB, A  , S  , D  ,M_F ,C_G  ,     C_H ,M_J , K  , L  ,SCLN,ESC ,
   //|----+----+----+----+----+----+     |----+----+----+----+----+----|
          , Z  , X  , C  , V  , B  ,       N  , M  ,COMM,DOT ,SLSH,    ,
   //`----+----+----+----+----+----/     \----+----+----+----+----+----'
