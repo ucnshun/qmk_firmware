@@ -45,12 +45,14 @@ enum macro_keycodes {
 // cmd_t
 #define KC_M_F LCMD_T(KC_F)
 #define KC_M_D LCMD_T(KC_D)
-#define KC_M_J LCMD_T(KC_J)
-#define KC_M_K LCMD_T(KC_K)
+#define KC_M_J RCMD_T(KC_J)
+#define KC_M_K RCMD_T(KC_K)
 
 // ctl_t
+#define KC_C_G LCTL_T(KC_G)
 #define KC_C_S LCTL_T(KC_S)
-#define KC_C_L LCTL_T(KC_L)
+#define KC_C_L RCTL_T(KC_L)
+#define KC_C_H RCTL_T(KC_H)
 #define KC_C_BS LCTL_T(KC_BSPC)
 
 // alt_t
@@ -90,9 +92,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT_kc( \
   //,----+----+----+----+----+----.     ,----+----+----+----+----+----.
-     ESC , Q  , W  , E  , R  , T  ,       Y  , U  , I  , O  , P  ,MINS,
+         , Q  , W  , E  , R  , T  ,       Y  , U  , I  , O  , P  ,MINS,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
-    S_TAB, A  ,C_S , D  ,M_F , G  ,       H  ,M_J , K  ,C_L ,SCLN,S_ESC,
+      TAB, A  , S  , D  ,M_F ,C_G ,      C_H ,M_J , K  , L  ,SCLN,ESC ,
   //|----+----+----+----+----+----+     |----+----+----+----+----+----|
          , Z  , X  , C  , V  , B  ,       N  , M  ,COMM,DOT ,SLSH,    ,
   //`----+----+----+----+----+----/     \----+----+----+----+----+----'
@@ -100,17 +102,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //          `----+----+----+----'     `----+----+----+----'
   ),
 
-  //   \ ^ ! & |  @ = + * % -
-  // ( # $ " ' ~  ← ↓ ↑ → ` )
-  //         { [  ] }
+  //   \ ! & |      = + * ^
+  //   # ` " ' ~  ← ↓ ↑ → $
+  //       { [ (  ) ] } @
 
   [_RAISE] = LAYOUT_kc( \
   //,----+----+----+----+----+----.     ,----+----+----+----+----+----.
-         ,BSLS,CIRC,EXLM,AMPR,PIPE,      AT  ,EQL ,PLUS,ASTR,PERC,MINS,
+         ,BSLS,EXLM,AMPR,PIPE,XXXX,      XXXX,EQL ,PLUS,ASTR,CIRC,    ,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
-     LPRN,HASH,DLR ,DQT ,QUOT,TILD,      LEFT,DOWN, UP ,RGHT,GRV ,RPRN,
+         ,HASH,GRV ,DQT ,QUOT,TILD,      LEFT,DOWN, UP ,RGHT,DLR ,    ,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
-        ,     ,    ,    ,LCBR,LBRC,      RBRC,RCBR,    ,    ,    ,    ,
+         ,    ,    ,LCBR,LBRC,LPRN,      RPRN,RBRC,RCBR,AT  ,PERC,    ,
   //`----+----+----+----+----+----/     \----+----+----+----+----+----'
                    ,    ,BSPC,    ,          ,    ,    ,RST
   //          `----+----+----+----'     `----+----+----+----'
@@ -118,11 +120,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_kc( \
   //,----+----+----+----+----+----.     ,----+----+----+----+----+----.
-         ,    ,    ,MSF ,MSR ,MST ,          ,EQL ,PLUS,ASTR,PERC,MINS,
+         ,    ,    ,MSF ,MSR ,MST ,          ,EQL ,PLUS,ASTR,    ,MINS,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
          , 1  , 2  , 3  , 4  , 5  ,       6  , 7  , 8  , 9  , 0  ,    ,
   //|----+----+----+----+----+----|     |----+----+----+----+----+----|
-         ,    ,    ,    ,    ,    ,          ,    ,COMM,DOT ,SLSH,    ,
+         ,    ,    ,    ,    ,    ,          ,PERC,COMM,DOT ,SLSH,    ,
   //`----+----+----+--+-+----+----/     \----+----+----+----+----+----'
                RST ,    ,    ,    ,          ,DEL ,    ,
   //          `----+----+----+----'     `----+----+----+----'
@@ -136,9 +138,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   if (is_master) {
-    return OLED_ROTATION_180;
-  } else {
     return OLED_ROTATION_0;
+  } else {
+    return OLED_ROTATION_180;
   }
 }
 
